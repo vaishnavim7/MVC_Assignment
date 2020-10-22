@@ -28,10 +28,13 @@ public class UserDaoImplement implements UserDao{
 			
 			i = st.executeUpdate();
 			st.close();
+		} catch (Exception e) {
 			
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
 		}
+			
+//		} catch (ClassNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
 		return i;
 	}
 
@@ -40,22 +43,28 @@ public class UserDaoImplement implements UserDao{
 		boolean flag = false;
 		try {
 			Connection conn = myConn.getConn();
-			PreparedStatement st = conn.prepareStatement("select * from UserData where UserName = ? and UPassword = ?");
-			st.setString(1, user.getUserName());
-			st.setString(2, user.getPass());
+			PreparedStatement pst = conn.prepareStatement("select * from UserData where UserName = ? and UPassword = ?");
+			pst.setString(1, user.getUserName());
+			pst.setString(2, user.getPass());
 			
-			ResultSet rs = st.executeQuery();
+			ResultSet rs = pst.executeQuery();
 			if(rs.next())
 			{
+				user.setUserId(rs.getInt("userId"));			
 				flag = true;
 			}
 			
-			st.close();
+			pst.close();
 			
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			
 		}
 		return flag;
+			
+//		} catch (ClassNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
+		
 	}
 	
 }
