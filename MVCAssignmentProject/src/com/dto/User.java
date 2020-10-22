@@ -1,6 +1,7 @@
 package com.dto;
 
 public class User {
+	private int userId;
 	private String fullName;
 	private String userName;
 	private String pass;
@@ -8,6 +9,13 @@ public class User {
 	public User() {
 		
 	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	
 	public String getFullName() {
 		return fullName;
 	}
@@ -28,14 +36,6 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return fullName + " " + userName + " " + pass;
+		return userId+" "+fullName + " " + userName + " " + pass;
 	}
-	
-	
-//	public User(String fullName, String userName, String pass) {
-//		super();
-//		this.fullName = fullName;
-//		this.userName =  userName;
-//		this.pass =  pass;
-//	}
 }
