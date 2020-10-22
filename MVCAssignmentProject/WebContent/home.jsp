@@ -12,7 +12,7 @@
 <h1>Welcome</h1> <br>
 
 <h1>User Name 
-<%=request.getParameter("userName") %> 
+<%=request.getParameter("user_name") %> 
 </h1> 
 
 <br>
