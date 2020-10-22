@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +30,7 @@
 				</tr>
 				<tr>
 					<td><a href="login.jsp" >Login</a> </td>
-					<td><input type="submit" value="Login"  /> </td>
+					<td><input type="submit" value="Register"  /> </td>
 				</tr>
 			</tbody>
 		</table>
